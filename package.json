@@ -1,7 +1,7 @@
 {
-  "name": "sm-crypto",
-  "version": "0.1.2",
-  "description": "sm-crypto",
+  "name": "hichain-sm-crypto",
+  "version": "0.0.1",
+  "description": "hichain-sm-crypto，基于sm-crypto。",
   "main": "src/index.js",
   "scripts": {
     "prepublish": "npm run build",
@@ -11,9 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuneAndGreen/sm-crypto.git"
+    "url": "git+https://github.com/lee84233/hichain-sm-crypto.git"
   },
   "keywords": [
+    "hichain",
     "sm",
     "js",
     "crypto"
@@ -22,7 +23,7 @@
     "testEnvironment": "jsdom",
     "testURL": "https://jest.test"
   },
-  "author": "june_01",
+  "author": "june_01,Lee",
   "license": "MIT",
   "dependencies": {
     "jsbn": "^1.1.0"

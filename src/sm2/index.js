@@ -204,6 +204,7 @@ function getPoint() {
 
 module.exports = {
   generateKeyPairHex: _.generateKeyPairHex,
+  generateKeyPairHexByHashValue: _.generateKeyPairHexByHashValue,
   doEncrypt,
   doDecrypt,
   doSignature,

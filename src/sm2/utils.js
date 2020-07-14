@@ -48,6 +48,21 @@ function generateKeyPairHex() {
 }
 
 /**
+ * 根据指定hash值，生成密钥对
+ * @param {String} hashValue
+ */
+function generateKeyPairHexByHashValue(hashValue) {
+  const d = new BigInteger(hashValue, 16)
+  const privateKey = leftPad(d.toString(16), 64)
+  const P = G.multiply(d) // P = dG，p 为公钥，d 为私钥
+  const Px = leftPad(P.getX().toBigInteger().toString(16), 64)
+  const Py = leftPad(P.getY().toBigInteger().toString(16), 64)
+  const publicKey = '0x' + Px + Py
+
+  return {privateKey, publicKey}
+}
+
+/**
  * 解析utf8字符串到16进制
  */
 function parseUtf8StringToHex(input) {
@@ -158,6 +173,7 @@ module.exports = {
   getGlobalCurve,
   generateEcparam,
   generateKeyPairHex,
+  generateKeyPairHexByHashValue,
   parseUtf8StringToHex,
   parseArrayBufferToHex,
   leftPad,
